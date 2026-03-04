@@ -80,15 +80,17 @@ draw = function(){
     }
     if(key == 'l'){
       result = round(random(1,2));
+      
+      if(result == 1){
+        sceneImage = ouchImage;
+        sceneText = "Bad idea. [press z to restart]";
+      }
+      if(result == 2){
+        sceneImage = ninthaveImage;
+        sceneText = "RUN. RUN YOU ARE BEING CHASED RUN. [press n to continue]";
+      }
     }
-    if(result == 1){
-      sceneImage = ouchImage;
-      sceneText = "Bad idea. [press z to restart]";
-    }
-    if(result == 2){
-      sceneImage = hallwayImage;
-      sceneText = "RUN. RUN YOU ARE BEING CHASED RUN. [press n to continue]";
-    }
+    
     if(key == 'n'){
       sceneImage = hallwayImage;
       sceneText = "You're back in the hallway of despair. [press e to continue]";
@@ -108,7 +110,7 @@ var drawScene = function(){
     rect(0, 350, 600, 100);
       
     fill(255,255,255);
-    textSize(20);
+    textSize(14);
    
     text(sceneText, 10, 375);
 };
